@@ -1,0 +1,228 @@
+/* Paleta de cores inspirada na Monster Energy */
+:root {
+    --cor-fundo: #000000;       /* Preto fundo principal */
+    --cor-texto: #FFFFFF;       /* Texto branco para contraste em fundo escuro */
+    --cor-acento: #95D600;      /* Verde vibrante (Monster Energy) para destaques :contentReference[oaicite:2]{index=2} */
+    --cor-cinza-escuro: #1a1a1a;/* Cinza muito escuro para cards/form (diferenciar do preto puro) */
+    --cor-cinza: #333333;       /* Cinza para bordas sutis */
+  }
+  
+  /* Reset básico e estilo global */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a {
+    text-decoration: none;
+    color: var(--cor-texto);
+  }
+  ul { list-style: none; }
+  h1, h2, h3 {
+    color: var(--cor-texto);
+    margin-bottom: 0.5em;
+  }
+  p {
+    margin-bottom: 1em;
+  }
+  
+  /* Estilos da Navbar */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--cor-fundo);
+    padding: 0.5em 1em;
+    position: relative;
+  }
+  nav .brand {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--cor-acento); /* Nome da marca em verde destaque */
+  }
+  nav .hamburger {
+    font-size: 1.5em;
+    color: var(--cor-texto);
+    cursor: pointer;
+    user-select: none;
+  }
+  /* Links do menu (hambúrguer) */
+  nav .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--cor-fundo);
+    width: 100%;
+    border-top: 1px solid var(--cor-cinza); /* linha separadora */
+    display: none;
+    flex-direction: column;
+  }
+  nav .nav-links li {
+    border-bottom: 1px solid var(--cor-cinza);
+  }
+  nav .nav-links li:last-child {
+    border-bottom: none;
+  }
+  nav .nav-links a {
+    display: block;
+    padding: 0.75em 1em;
+    color: var(--cor-texto);
+  }
+  /* Exibir menu quando nav está com classe .nav-open (ativada pelo JS) */
+  nav.nav-open .nav-links {
+    display: flex;
+  }
+  
+  /* Botões principais e secundários */
+  .btn {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    margin: 0.5em 0;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid var(--cor-acento);
+    transition: all 0.3s ease;
+  }
+  /* Estilo do botão principal (verde de fundo) e secundário (transparente) */
+  .btn.principal {
+    background-color: var(--cor-acento);
+    color: #000; /* texto preto para alta legibilidade sobre verde */
+  }
+  .btn.secundario {
+    background-color: transparent;
+    color: var(--cor-acento);
+  }
+  /* Hover/Focus dos botões para feedback visual */
+  .btn:hover, .btn:focus {
+    background-color: var(--cor-acento);
+    color: #000;
+    box-shadow: 0 0 8px rgba(149, 214, 0, 0.5); /* leve glow verde */
+    transform: scale(1.03);
+  }
+  
+  /* Seção da tela inicial (centralizar conteúdo) */
+  .home-actions {
+    text-align: center;
+    padding: 2em 1em;
+  }
+  .home-actions h1 {
+    font-size: 1.5em;
+    margin-bottom: 0.2em;
+  }
+  .home-actions p {
+    margin-bottom: 1.5em;
+    color: #bbbbbb; /* um cinza claro para subtítulo */
+  }
+  .home-actions .btn {
+    width: 80%;
+    max-width: 300px;
+  }
+  
+  /* Formulário de Novo Evento */
+  .form-section {
+    padding: 1.5em;
+  }
+  .evento-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .evento-form label {
+    margin: 0.5em 0 0.2em;
+  }
+  .evento-form input {
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid var(--cor-cinza);
+    background-color: var(--cor-cinza-escuro);
+    color: var(--cor-texto);
+    font-size: 1em;
+  }
+  .evento-form input:focus {
+    border: 1px solid var(--cor-acento);
+    outline: none;
+    box-shadow: 0 0 5px rgba(149, 214, 0, 0.5);
+  }
+  /* Estilo do botão de submit do formulário */
+  .evento-form .btn {
+    width: 100%;
+    padding: 0.75em;
+    margin-top: 0.5em;
+  }
+  
+  /* Listagem de Eventos (cards) */
+  .eventos-lista {
+    padding: 1.5em;
+  }
+  .eventos-lista .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  /* Card individual */
+  .card {
+    background-color: var(--cor-cinza-escuro);
+    padding: 1em;
+    border-left: 4px solid var(--cor-acento);
+    border: 1px solid var(--cor-cinza);
+    transition: all 0.3s ease;
+  }
+  .card h3 {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+  }
+  .card p {
+    font-size: 0.95em;
+    margin-bottom: 0.3em;
+  }
+  .card:hover {
+    border-color: var(--cor-acento);
+    box-shadow: 0 0 10px rgba(149, 214, 0, 0.5);
+    transform: scale(1.02);
+  }
+  
+  /* Responsividade: telas médias e grandes */
+  @media (min-width: 768px) {
+    /* Navbar: mostrar links inline e ocultar hambúrguer */
+    nav .nav-links {
+      position: static;
+      flex-direction: row;
+      width: auto;
+      border: none;
+      display: flex !important;  /* sempre mostrar no desktop */
+    }
+    nav .nav-links a {
+      padding: 0.5em 1em;
+    }
+    nav .hamburger {
+      display: none;
+    }
+    /* Tela inicial: botões lado a lado se espaço disponível */
+    .home-actions .btn {
+      width: auto;
+      margin: 0.5em;
+    }
+    /* Cards de eventos em duas colunas em telas médias */
+    .eventos-lista .cards {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .eventos-lista .card {
+      flex: 1 1 calc(50% - 1em);
+    }
+  }
+  @media (min-width: 1024px) {
+    /* Cards de eventos em três colunas em telas maiores */
+    .eventos-lista .card {
+      flex: 1 1 calc(33% - 1em);
+    }
+  }
+  

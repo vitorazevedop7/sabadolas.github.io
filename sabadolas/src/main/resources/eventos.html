@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabadolas - Eventos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navegação (mesmo cabeçalho) -->
+  <nav>
+    <div class="brand">Sabadolas</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="novo_evento.html">Novo Evento</a></li>
+      <li><a href="eventos.html">Eventos</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo Principal: Lista de Eventos -->
+  <main>
+    <section class="eventos-lista">
+      <h2>Eventos Cadastrados</h2>
+      <div class="cards">
+        <!-- Card de evento 1 -->
+        <div class="card">
+          <h3>Festa de Aniversário</h3>
+          <p><strong>Local:</strong> Salão de Festas XYZ</p>
+          <p><strong>Participantes:</strong> 50</p>
+        </div>
+        <!-- Card de evento 2 -->
+        <div class="card">
+          <h3>Workshop de Fotografia</h3>
+          <p><strong>Local:</strong> Centro Comunitário ABC</p>
+          <p><strong>Participantes:</strong> 20</p>
+        </div>
+        <!-- Card de evento 3 (exemplo adicional) -->
+        <div class="card">
+          <h3>Reunião de Projeto</h3>
+          <p><strong>Local:</strong> Escritório Central</p>
+          <p><strong>Participantes:</strong> 10</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
